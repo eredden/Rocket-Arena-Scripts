@@ -1,4 +1,4 @@
--- note that script.Music is a folder with music inside
+-- Note that script.Music is a folder with music inside.
 music = script.Music
 
 function playTrack(track)
@@ -14,7 +14,7 @@ end
 
 print("MUSIC EVENT: The music player has begun running!")
 
--- iterate through music folder and play all tracks repeatedly
+-- Iterate through music folder and play all tracks repeatedly.
 while true do
 	for i, track in ipairs(music:GetChildren()) do
 		if track:IsA("Sound") and track.IsPlaying == false then

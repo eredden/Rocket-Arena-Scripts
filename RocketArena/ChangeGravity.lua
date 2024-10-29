@@ -5,5 +5,5 @@ function changeGravity(value)
 	game.Workspace.Gravity = value
 end
 
--- activated from GravitasMode() in ModeRotation.lua
+-- Activated from GravitasMode() in ModeRotation.lua.
 ChangeGuiEvent.OnClientEvent:Connect(changeGravity)

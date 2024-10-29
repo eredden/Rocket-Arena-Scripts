@@ -11,12 +11,12 @@ BASE FUNCTIONS
 --]]
 
 
--- calls local script ChangeGui.lua with params
+-- Calls local script ChangeGui.lua with parameters.
 function ChangeGuiText(gui, textbox, text)
 	ChangeGuiEvent:FireAllClients(gui, textbox, text)
 end
 
--- change of property of Humanoid for all players
+-- Change of property of Humanoid for all players.
 function ChangeAttributeForAll(attribute, value)
 	local StarterPlayer = game.StarterPlayer
 	print("MODE EVENT: Changing " .. attribute .. " to " .. value .. " for all players!")
@@ -27,11 +27,11 @@ function ChangeAttributeForAll(attribute, value)
 		end
 	end
 	
-	-- ensures that changes persist even if players die
+	-- Ensures that changes persist even if players die.
 	StarterPlayer["Character" .. attribute] = value
 end
 
--- sets name and desc for modes
+-- Sets name and description for modes.
 function StartMode(name, description)
 	Notification:Play()
 	ChangeGuiText("Mode GUI", "Mode", name)
@@ -54,7 +54,7 @@ function RegularMode(roundTime)
 	wait(roundTime * 60)
 end
 
--- x1.5 player speed
+-- x1.5 player speed.
 function HermesMode(roundTime)
 	local name = "HERMES MODE"
 	local description = "Faster than wind in a hurricane!"
@@ -69,7 +69,7 @@ function HermesMode(roundTime)
 	ChangeAttributeForAll(attribute, oldValue)
 end
 
--- x2 player jump height
+-- x2 player jump height.
 function ZephyrusMode(roundTime)
 	local name = "ZEPHYRUS MODE"
 	local description = "Float like a butterfly, sting like a bee."
@@ -84,7 +84,7 @@ function ZephyrusMode(roundTime)
 	ChangeAttributeForAll(attribute, oldValue)
 end
 
--- ~25% gravity
+-- ~25% gravity.
 function GravitasMode(roundTime)
 	local name = "GRAVITAS MODE"
 	local description = "Houston, we have a problem."
@@ -93,13 +93,13 @@ function GravitasMode(roundTime)
 
 	StartMode(name, description)
 	
-    -- calls local script ChangeGravity.lua with gravity value
+    -- Calls local script ChangeGravity.lua with gravity values.
 	ChangeGravityEvent:FireAllClients(50)
 	wait(roundTime * 60)
 	ChangeGravityEvent:FireAllClients(196.2)
 end
 
--- starts day/night cycle quickly
+-- Speeds up day/night cycle.
 function ChronosMode(roundTime)
 	local name = "CHRONOS MODE"
 	local description = "Have you checked the clock?"
@@ -109,7 +109,7 @@ function ChronosMode(roundTime)
 
 	StartMode(name, description)
 
-	-- changes in-game time by thirty minutes, every second
+	-- Changes in-game time by thirty minutes, every second.
 	while roundTime > 0 do
 		if lighting.ClockTime < 24 then
 			lighting.ClockTime = lighting.ClockTime + 0.5
@@ -132,7 +132,7 @@ MAIN EXECUTION
 --]]
 
 
-local RoundTime = 2 -- in minutes
+local RoundTime = 2 -- In minutes.
 
 wait(2)
 
