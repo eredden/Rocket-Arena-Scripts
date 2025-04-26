@@ -9,3 +9,5 @@ I have gone ahead and made the game available to copy as well, so if you would l
 ### Purpose
 
 This repository is intended to be a display of my work and is not necessarily meant for reuse, as the scripts are generally specific to the things I needed to do within my game. With that being said, you are free to reuse them so long as you do not fully claim them to be yours.
+
+![noFilter](https://github.com/user-attachments/assets/9b1d1e28-43c9-4901-b6ec-77868af7a2ee)
